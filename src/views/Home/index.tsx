@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 
+import { Container, Card } from './style';
+
 const Home: React.FC = () => {
   const [ count, setCount ] = useState<number>(0);
 
@@ -10,20 +12,18 @@ const Home: React.FC = () => {
   })
 
   const prevCount = prevCountRef.current;
-
-
   // uso do useRef
-
-
   return (
-    <div>
-      <h1>Home</h1>
-      <h3>O valor do contador agora: {count}</h3>
-      <h3>Valor do contador antes: {prevCount}</h3>
-      <button onClick={() => setCount( count + 1 )} >
-        Somar um ao contador
-      </button>
-    </div>
+    <Container>
+      <Card>
+        <h1>Home</h1>
+        <h3>O valor do contador agora: {count}</h3>
+        <h3>Valor do contador antes: {prevCount}</h3>
+        <button onClick={() => setCount( count + 1 )} >
+          Somar um ao contador
+        </button>
+      </Card>
+    </Container>
   )
 }
 
